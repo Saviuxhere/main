@@ -1,0 +1,7 @@
+RewriteEngine on
+#1) redirect file.php to file
+RewriteCond %{THE_REQUEST} /([^.]+).php [NC]
+RewriteRule .+ /%1 [L,R=301]
+#2) rewrite /file to file.php
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule (.*)/?$ /$1.php [L
